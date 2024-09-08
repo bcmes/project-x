@@ -1,3 +1,5 @@
+# Esse workflow foi auto-gerado em https://github.com/bcmes/project-x/actions/new com o template "java with Maven" :0
+#
 # This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
 
@@ -8,18 +10,47 @@
 
 name: Java-CI-with-Maven
 
-on: [push]
+#on: [pull_request] # Obs.: Quando vc dá um merge na pull-request, isso é um push no github.
+
+on:
+  pull_request:
+    branches:
+      - develop
 
 jobs:
-  build:
-    runs-on: ubuntu-latest #Container que executara os comandos
+  check-app:
+    runs-on: ubuntu-latest #Container que executará os comandos
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v4 #Copia o codigo pro container
     - name: Set up JDK 21
-      uses: actions/setup-java@v4
+      uses: actions/setup-java@v4 #Configura o JDK
       with:
         java-version: '21'
         distribution: 'zulu'
-        cache: maven
-    - name: Build with Maven
+        cache: maven # para nao ter de baixar as dependencias do pom.xml toda vez.  A chave de cache será o conteúdo em hash do pom.xml
+    - name: Build with Maven # package: roda os testes e gera o pacote
       run: mvn -B package
+
+# Criando branch develop:
+# git checkout -b develop
+# git push origin develop
+
+# Vá github, entre no projeto "project-x", va na aba "Settings" opcão "Branches"
+# Em "Default branch" informe "develop", e clique em "Add rule"
+# - Branch name pattern = develop
+# - Require status checks to pass before merging = true
+#   - Require branches to be up to date before merging = true
+#   - Marque o "check-app" conforme linha 14 acima.
+# - Include administrators = true =>Os administradores também estão sujeitos as configuraćões
+# - Restrict who can push to matching branches = true =>Assim ninguem pode mergear direto em develop.
+
+# Vá github, entre no projeto "project-x", va na aba "Settings" opcão "Branches"
+# Em "Default branch" informe "master", e clique em "Add rule"
+# - Branch name pattern = master
+# - Require status checks to pass before merging = true
+#   - Require branches to be up to date before merging = true
+#   - Marque o "check-app" conforme linha 14 acima.
+# - Include administrators = true =>Os administradores também estão sujeitos as configuraćões
+# - Restrict who can push to matching branches = true =>Assim ninguem pode mergear direto em develop.
+
+# Mais detalhes no GitHub Docs.: https://docs.github.com/pt/actions/use-cases-and-examples/building-and-testing/building-and-testing-java-with-maven
