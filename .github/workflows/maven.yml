@@ -6,15 +6,13 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Java CI with Maven
+name: Java-CI-with-Maven
 
 on: [push]
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
-
+    runs-on: ubuntu-latest #Container que executara os comandos
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 21
