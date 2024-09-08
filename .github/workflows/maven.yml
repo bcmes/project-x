@@ -40,7 +40,7 @@ jobs:
 # - Branch name pattern = develop
 # - Require status checks to pass before merging = true
 #   - Require branches to be up to date before merging = true
-#   - Marque o "check-app" conforme linha 14 acima.
+#   - Marque o "check-app" conforme linha 14 acima. Obs.: Ele reconhece o ultimo nome que executou no github !
 # - Include administrators = true =>Os administradores também estão sujeitos as configuraćões
 # - Restrict who can push to matching branches = true =>Assim ninguem pode mergear direto em develop.
 
