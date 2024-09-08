@@ -54,5 +54,3 @@ jobs:
 # - Restrict who can push to matching branches = true =>Assim ninguem pode mergear direto em develop.
 
 # Mais detalhes no GitHub Docs.: https://docs.github.com/pt/actions/use-cases-and-examples/building-and-testing/building-and-testing-java-with-maven
-
-#Teste de commit direto na master
