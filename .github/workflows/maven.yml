@@ -10,12 +10,12 @@
 
 name: Java-CI-with-Maven
 
-on: [push] # Obs.: Quando vc dá um merge na pull-request, isso é um push no github.
+#on: [push] # Obs.: Quando vc dá um merge na pull-request, isso é um push no github.
 
-#on:
-#  pull_request:
-#    branches:
-#      - develop
+on:
+  pull_request:
+    branches:
+      - develop
 
 jobs:
   check-app:
