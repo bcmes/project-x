@@ -31,4 +31,9 @@ public class ClientController {
         clientRepository.save(clientDomain);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/test")
+    public ResponseEntity anyValue() {
+        return ResponseEntity.noContent().build();
+    }
 }
