@@ -32,14 +32,14 @@ public class ClientController {
         return ResponseEntity.noContent().build();
     }
 
-    @GetMapping
+    @GetMapping("/test2")
     public ResponseEntity<List<ClientControllerListResponse>> listAll2() {
         List<ClientDomain> clientsDomain = clientRepository.findAll();
         List<ClientControllerListResponse> clientsResponse = clientsDomain.stream().map(ClientControllerListResponse::new).toList();
         return ResponseEntity.ok(clientsResponse);
     }
 
-    @PostMapping
+    @PostMapping("test2")
     public ResponseEntity<Void> create2(@RequestBody @Valid ClientControllerInputCreate clientControllerInputCreate) {
         ClientDomain clientDomain = clientControllerInputCreate.toClientDomain();
         clientRepository.save(clientDomain);
