@@ -46,7 +46,7 @@ jobs:
       with:
         push: true
         tags: brunomeloesilva/project-x:latest
-    - name: Cache SonarCloud packages
+    - name: Cache SonarCloud packages #daqui pra baixo é comunicacao com sonarCloud
       uses: actions/cache@v4
       with:
         path: ~/.sonar/cache
