@@ -97,8 +97,6 @@
                 <!--Até onde estudei, no Java/Maven não suporta naturalmente o sonar-project.properties, para funcionar deve-se fazer essa gambi:
                 https://stackoverflow.com/questions/45095379/running-sonar-analysis-with-mvn-sonarsonar-ignores-sonar-project-properties-->
                 <!--Versão SonarCloud-->
-                <sonar.projectKey>project-x</sonar.projectKey>
-                <sonar.projectName>project-x</sonar.projectName>
                 <sonar.organization>bcmes</sonar.organization>
                 <sonar.host.url>https://sonarcloud.io</sonar.host.url>
                 <sonar.language>java</sonar.language>
