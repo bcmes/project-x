@@ -31,18 +31,4 @@ public class ClientController {
         clientRepository.save(clientDomain);
         return ResponseEntity.noContent().build();
     }
-
-    @GetMapping("/test2")
-    public ResponseEntity<List<ClientControllerListResponse>> listAll2() {
-        List<ClientDomain> clientsDomain = clientRepository.findAll();
-        List<ClientControllerListResponse> clientsResponse = clientsDomain.stream().map(ClientControllerListResponse::new).toList();
-        return ResponseEntity.ok(clientsResponse);
-    }
-
-    @PostMapping("test2")
-    public ResponseEntity<Void> create2(@RequestBody @Valid ClientControllerInputCreate clientControllerInputCreate) {
-        ClientDomain clientDomain = clientControllerInputCreate.toClientDomain();
-        clientRepository.save(clientDomain);
-        return ResponseEntity.noContent().build();
-    }
 }
