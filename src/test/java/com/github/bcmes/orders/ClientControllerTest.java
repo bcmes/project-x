@@ -28,17 +28,17 @@ class ClientControllerTest {
 
     @Test
     void listAll_ShouldReturnListOfClients() {
-//        // Arrange
-//        List<ClientDomain> mockClients = List.of(new ClientDomain(), new ClientDomain());
-//        when(clientRepository.findAll()).thenReturn(mockClients);
-//
-//        // Act
-//        ResponseEntity<List<ClientControllerListResponse>> response = clientController.listAll();
-//
-//        // Assert
-//        assertEquals(200, response.getStatusCodeValue());
-//        assertEquals(mockClients.size(), response.getBody().size());
-//        verify(clientRepository, times(1)).findAll();
+        // Arrange
+        List<ClientDomain> mockClients = List.of(new ClientDomain(), new ClientDomain());
+        when(clientRepository.findAll()).thenReturn(mockClients);
+
+        // Act
+        ResponseEntity<List<ClientControllerListResponse>> response = clientController.listAll();
+
+        // Assert
+        assertEquals(200, response.getStatusCodeValue());
+        assertEquals(mockClients.size(), response.getBody().size());
+        verify(clientRepository, times(1)).findAll();
     }
 
     @Test
