@@ -81,9 +81,9 @@
                 <!--Versão 01:
                 As demais propriedades foram preenchidas com os valores default
                 Você não precisa criar previamente o projeto no SonarQube, será criado automaticamente-->
-                <sonar.host.url>http://localhost:9000</sonar.host.url>
-                <sonar.login>admin</sonar.login>
-                <sonar.password>123</sonar.password>
+<!--                <sonar.host.url>http://localhost:9000</sonar.host.url>-->
+<!--                <sonar.login>admin</sonar.login>-->
+<!--                <sonar.password>123</sonar.password>-->
                 <!--Versão 02:
                 Mas se você quiser enviar os dados para um projeto previamente criado no SonarQube-->
 <!--                <sonar.projectKey>project-x</sonar.projectKey>-->
@@ -96,6 +96,9 @@
 <!--                <sonar.java.binaries>target/classes</sonar.java.binaries>-->
                 <!--Até onde estudei, no Java/Maven não suporta naturalmente o sonar-project.properties, para funcionar deve-se fazer essa gambi:
                 https://stackoverflow.com/questions/45095379/running-sonar-analysis-with-mvn-sonarsonar-ignores-sonar-project-properties-->
+                <!--Versão SonarCloud-->
+                <sonar.organization>bcmes</sonar.organization>
+                <sonar.host.url>https://sonarcloud.io</sonar.host.url>
             </properties>
             <build>
                 <plugins>
