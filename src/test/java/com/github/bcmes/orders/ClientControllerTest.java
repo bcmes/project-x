@@ -28,31 +28,31 @@ class ClientControllerTest {
 
     @Test
     void listAll_ShouldReturnListOfClients() {
-//        // Arrange
-//        List<ClientDomain> mockClients = List.of(new ClientDomain(), new ClientDomain());
-//        when(clientRepository.findAll()).thenReturn(mockClients);
-//
-//        // Act
-//        ResponseEntity<List<ClientControllerListResponse>> response = clientController.listAll();
-//
-//        // Assert
-//        assertEquals(200, response.getStatusCodeValue());
-//        assertEquals(mockClients.size(), response.getBody().size());
-//        verify(clientRepository, times(1)).findAll();
+        // Arrange
+        List<ClientDomain> mockClients = List.of(new ClientDomain(), new ClientDomain());
+        when(clientRepository.findAll()).thenReturn(mockClients);
+
+        // Act
+        ResponseEntity<List<ClientControllerListResponse>> response = clientController.listAll();
+
+        // Assert
+        assertEquals(200, response.getStatusCodeValue());
+        assertEquals(mockClients.size(), response.getBody().size());
+        verify(clientRepository, times(1)).findAll();
     }
 
     @Test
     void create_ShouldSaveClientAndReturnNoContent() {
-//        // Arrange
-//        ClientControllerInputCreate clientInput = mock(ClientControllerInputCreate.class);
-//        ClientDomain clientDomain = new ClientDomain();
-//        when(clientInput.toClientDomain()).thenReturn(clientDomain);
-//
-//        // Act
-//        ResponseEntity<Void> response = clientController.create(clientInput);
-//
-//        // Assert
-//        assertEquals(204, response.getStatusCodeValue());
-//        verify(clientRepository, times(1)).save(any(ClientDomain.class));
+        // Arrange
+        ClientControllerInputCreate clientInput = mock(ClientControllerInputCreate.class);
+        ClientDomain clientDomain = new ClientDomain();
+        when(clientInput.toClientDomain()).thenReturn(clientDomain);
+
+        // Act
+        ResponseEntity<Void> response = clientController.create(clientInput);
+
+        // Assert
+        assertEquals(204, response.getStatusCodeValue());
+        verify(clientRepository, times(1)).save(any(ClientDomain.class));
     }
 }
